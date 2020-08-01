@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mood_tracker_app/screens/home.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class customiseApp extends StatefulWidget {
   Color currentColor = Colors.purple[50];
@@ -54,10 +55,9 @@ class _ThemeListState extends State<ThemeList> {
               color: themes.elementAt(index),
               child: FlatButton(
                 onPressed: () {
-                  currentTheme = themes.elementAt(index);
-                  print(currentTheme);
-                  //call method in customiseApp to change appbar colour
-                  customiseApp().changeTheme(currentTheme);
+                  if (index == 0) {
+                    print(themes.elementAt(index));
+                  }
                 },
                 child: Text(
                   settings.elementAt(index),
