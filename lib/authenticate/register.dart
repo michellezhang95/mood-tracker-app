@@ -17,6 +17,7 @@ class _RegisterState extends State<Register> {
   //text field state
   String email = '';
   String password = '';
+  String name = '';
   String error = '';
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,15 @@ class _RegisterState extends State<Register> {
                       SizedBox(height: 20.0),
                       //inpt for email
                       TextFormField(
+                          decoration: textInputDecoration.copyWith(
+                              hintText: 'First Name'),
+                          validator: (val) =>
+                              val.isEmpty ? 'Enter a name please' : null,
+                          onChanged: (val) {
+                            setState(() => name = val);
+                          }),
+                      SizedBox(height: 20.0),
+                      TextFormField(
                           decoration:
                               textInputDecoration.copyWith(hintText: 'Email'),
                           validator: (val) =>
@@ -67,6 +77,7 @@ class _RegisterState extends State<Register> {
                           setState(() => password = pval);
                         },
                       ),
+
                       SizedBox(height: 20.0),
                       RaisedButton(
                           color: Colors.pink[400],
@@ -81,7 +92,7 @@ class _RegisterState extends State<Register> {
                               setState(() => loading = true);
                               dynamic result =
                                   await _auth.registerWithEmailAndPassword(
-                                      email, password);
+                                      email, password, name);
                               if (result == null) {
                                 setState(() {
                                   error = 'Please enter valid email';

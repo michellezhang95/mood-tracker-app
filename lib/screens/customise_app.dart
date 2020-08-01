@@ -19,7 +19,8 @@ class _customiseAppState extends State<customiseApp> {
     return Scaffold(
       body: ThemeList(),
       appBar: AppBar(
-        title: Text('Account Settings'),
+        elevation: 0.0,
+        title: Text('Account Settings', style: TextStyle(color: Colors.black)),
         backgroundColor: customiseApp().currentColor,
       ),
     );
@@ -33,27 +34,36 @@ class ThemeList extends StatefulWidget {
 
 class _ThemeListState extends State<ThemeList> {
   final List<Color> themes = <Color>[Colors.red, Colors.orange];
+  final List<String> settings = <String>['Update Profile', 'Change Theme'];
   Color currentTheme;
+
   //final int colorCode = 300;
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final smallWidth = width * 0.95;
     return ListView.separated(
       padding: const EdgeInsets.all(8),
       itemCount: themes.length,
       itemBuilder: (BuildContext context, int index) {
-        return Container(
-          height: 50.0,
-          color: themes.elementAt(index),
-          child: FlatButton(
-            onPressed: () {
-              currentTheme = themes.elementAt(index);
-              print(currentTheme);
-              //call method in customiseApp to change appbar colour
-              customiseApp().changeTheme(currentTheme);
-            },
-            child: Text(
-              'Set colour',
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
+        return Align(
+          child: SizedBox(
+            width: width > 600 ? 600 : smallWidth,
+            child: Container(
+              height: 50.0,
+              color: themes.elementAt(index),
+              child: FlatButton(
+                onPressed: () {
+                  currentTheme = themes.elementAt(index);
+                  print(currentTheme);
+                  //call method in customiseApp to change appbar colour
+                  customiseApp().changeTheme(currentTheme);
+                },
+                child: Text(
+                  settings.elementAt(index),
+                  style: TextStyle(color: Colors.white, fontSize: 20.0),
+                ),
+              ),
             ),
           ),
         );

@@ -42,9 +42,9 @@ class Home extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.green[100],
 
-          title: Text('To do!'),
+          title: Text('Welcome'),
 
           //gradient: LinearGradient(colors: null),
           actions: <Widget>[
