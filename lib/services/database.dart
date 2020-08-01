@@ -10,14 +10,19 @@ class DatabaseService {
 
   final CollectionReference entryCollection =
       Firestore.instance.collection('entries');
+
   // this method updates the user data within firebase cloud firestore
   //each time a user registers their name is saved into the 'users' collection
-
   Future updateUserData(String name) async {
     return await userCollection.document(uid).setData({
       'name': name,
     });
   }
 
-  Future updateUserEntry(String mood) {}
+  //database update for new journal entry
+  Future updateUserEntry(String mood) async {
+    return await entryCollection.document(uid).setData({
+      'entry': mood,
+    });
+  }
 }
