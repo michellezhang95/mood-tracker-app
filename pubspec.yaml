@@ -35,6 +35,8 @@ dependencies:
   rounded_floating_app_bar: 0.1.0
   gradient_app_bar: ^0.0.1
   modal_bottom_sheet: ^0.2.0+1
+  flutter_calendar_carousel: ^1.4.12
+  table_calendar: ^2.2.3
 
 dev_dependencies:
   flutter_test:

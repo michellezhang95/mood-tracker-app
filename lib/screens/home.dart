@@ -3,6 +3,7 @@ import 'package:mood_tracker_app/services/auth.dart';
 import 'package:mood_tracker_app/services/database.dart';
 import 'package:provider/provider.dart';
 import 'package:mood_tracker_app/screens/customise_app.dart';
+import 'package:mood_tracker_app/screens/calendar.dart';
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
@@ -58,6 +59,12 @@ class Home extends StatelessWidget {
               icon: const Icon(Icons.settings),
               onPressed: null,
             ),
+            IconButton(
+                icon: const Icon(Icons.calendar_today),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Calendar()));
+                }),
           ],
         ));
   }
