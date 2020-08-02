@@ -22,6 +22,8 @@ class _CalendarState extends State<Calendar> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Calendar View'),
+          elevation: 0.0,
+          backgroundColor: Colors.green[200],
         ),
         body: SingleChildScrollView(
             child: Column(
@@ -29,11 +31,12 @@ class _CalendarState extends State<Calendar> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             TableCalendar(
-              initialCalendarFormat: CalendarFormat.week,
+              initialCalendarFormat: CalendarFormat.month,
               calendarStyle: CalendarStyle(
                 todayColor: Colors.lightGreen[200],
                 selectedColor: Theme.of(context).primaryColor,
               ),
+              calendarController: _calendarController,
             )
           ],
         )));

@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: Colors.green[100],
+          backgroundColor: Colors.green[200],
           elevation: 0.0,
 
           title: Text('Welcome'),
