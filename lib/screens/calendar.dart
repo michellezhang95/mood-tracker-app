@@ -36,6 +36,9 @@ class _CalendarState extends State<Calendar> {
                 todayColor: Colors.lightGreen[200],
                 selectedColor: Theme.of(context).primaryColor,
               ),
+              onDayLongPressed: (date, events) {
+                print('here');
+              },
               calendarController: _calendarController,
             )
           ],

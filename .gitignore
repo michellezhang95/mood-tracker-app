@@ -6,3 +6,7 @@ build/flutter_assets/NOTICES
 .dart_tool/chrome-device/Default/Local Storage/leveldb/LOG.old
 .flutter-plugins-dependencies
 *.dill
+.dart_tool/chrome-device/Default/preferences
+*.old
+.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG
+*.log
