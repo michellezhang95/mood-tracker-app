@@ -45,9 +45,7 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.green[200],
           elevation: 0.0,
-
           title: Text('Welcome'),
-
           //gradient: LinearGradient(colors: null),
           actions: <Widget>[
             IconButton(
