@@ -28,7 +28,7 @@ class _RegisterState extends State<Register> {
             appBar: AppBar(
               backgroundColor: Colors.brown[400],
               elevation: 0.0,
-              title: Text('Register to Ordering App'),
+              title: Text('Register to Mood Tracker'),
               actions: <Widget>[
                 FlatButton.icon(
                   onPressed: () async {
